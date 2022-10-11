@@ -1,0 +1,52 @@
+/* Media Quiry Mixin */
+@mixin medium {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+
+/* Overly Mixin */
+@mixin overly {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Prefixiess Mixin */
+@mixin prefixies($property, $value, $prefixies: ()) {
+  @each $prefix in $prefixies {
+    #{"-" + $prefix + "-" + $property}: $value;
+  }
+  #{$property}: $value;
+}
+
+/* Animation Mixin */
+@mixin keyframe($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+/////////
+/////////
+/////////
+@mixin flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/////////
+/////////
+/////////
+@mixin grid($size) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($size, 1fr));
+  gap: 20px;
+}

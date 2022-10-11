@@ -1,0 +1,18 @@
+* {
+  @include prefixies(box-sizing, border-box, webkit moz o);
+}
+.container {
+  margin: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
+  @media (min-width: 768px) {
+    width: 750px;
+  }
+  @media (min-width: 992px) {
+    width: 970px;
+  }
+  @media (min-width: 1200px) {
+    width: 1170px;
+  }
+}
